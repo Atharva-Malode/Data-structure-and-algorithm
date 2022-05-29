@@ -1,1 +1,1 @@
-Hello folks This is Just a data structure and algorithm revision repository 
+made to have quick recap of data structure and algorithm  
