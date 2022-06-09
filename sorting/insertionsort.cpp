@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int insertion_sort(vector <int>  V)
+int insertion_sort(vector <int>  &V)
 {
 
     int n = V.size();
@@ -14,6 +14,7 @@ int insertion_sort(vector <int>  V)
             V[previous + 1] = V[previous];
             previous = previous - 1;
         }
+         V[previous+1]= current;
     }
 }
 

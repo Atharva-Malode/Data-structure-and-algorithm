@@ -1,6 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/*
+      The Brute force approach used here has the Time Complxity of O(N^3) 
+
+*/
 int BruteForceSum(vector<int> c)
 {
     int largest_summ = 0;
@@ -24,23 +28,10 @@ int BruteForceSum(vector<int> c)
     return largest_summ;
 }
 
-int kadens_algorithm(vector<int> A)
-{
+/*
+      The Preffix Sum  approach used here has the Time Complxity of O(N^2) 
 
-    int cs = 0;
-    int largestsum = 0;
-    for (int i = 0; i < A.size(); i++)
-    {
-        cs = cs + A[i];
-        if (cs < 0)
-        {
-            cs = 0;
-        }
-        largestsum = max(largestsum, cs);
-    }
-    return largestsum;
-}
-
+*/
 int preffix_sum(vector<int> B)
 {
     int preffix[100];
@@ -64,6 +55,28 @@ int preffix_sum(vector<int> B)
     return largest_sum;
 }
 
+/*
+      The kadens algorithm  approach used here has the Time Complxity of O(N) which is in linear time
+
+*/
+
+int kadens_algorithm(vector<int> A)
+{
+
+    int cs = 0;
+    int largestsum = 0;
+    for (int i = 0; i < A.size(); i++)
+    {
+        cs = cs + A[i];
+        if (cs < 0)
+        {
+            cs = 0;
+        }
+        largestsum = max(largestsum, cs);
+    }
+    return largestsum;
+}
+
 int main()
 {
     vector<int> v = {1, -2, 3, 4, 4, -2};
@@ -72,6 +85,6 @@ int main()
     int prefix_sum = preffix_sum(v);
     cout << " largest sum using Preffix approach : " << prefix_sum << endl;
     int brute_force_sum = BruteForceSum(v);
-    cout << " largest sum using  BruteForce Approach  : " << brute_force_sum << endl;
+    cout << " largest sum using BruteForce Approach  : " << brute_force_sum << endl;
     return 0;
 }
