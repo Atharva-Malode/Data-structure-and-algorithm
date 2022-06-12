@@ -1,15 +1,11 @@
-#include <bits/stdc++.h>
+#include<iostream>
+
 using namespace std;
 
 int main(){
 
-
-char x[100];
-char a[100];
-cout << " Enter your line now "<<endl;
-cin.getline(x,1000);
-cout << x <<endl;
-strcpy(a,x);
-cout <<"The a string is "<< a << endl;
+ char sentence[1000];
+ cin.getline(sentence,1000,'.');
+ cout <<sentence<<endl;
 return 0;
 }
