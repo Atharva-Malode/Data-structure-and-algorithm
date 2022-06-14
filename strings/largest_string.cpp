@@ -1,3 +1,8 @@
+
+//simple programme for largest string  is here 
+
+
+
 #include<iostream>
 #include <string.h>
 using namespace std;
