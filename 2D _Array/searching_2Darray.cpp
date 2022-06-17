@@ -3,7 +3,17 @@
      Approcah 1 --> Bruteforce approach : We may transverse accrose complete array row by row or column by column (linear search).
      Approach 2 --> Binary search approach : we may apply binary search on each row or column to search the element.
      Approach 3 --> staircase approach : we will fix the corner elements of the array and check the less than element and in move in that direction.
- */
+
+                            
+
+                      ROWS    ==>    1   2   3  [4]   
+
+                                     5   6   7   8
+
+                                     9   10  11  12
+                                     
+                                     13  14  15  16    <--  {(n-1),(m-1)}
+ */ 
 
 #include <iostream>
 using namespace std;
@@ -93,9 +103,9 @@ pair<int, int> staircaseApproach(int arr[][10], int n, int m, int key)
 int main()
 {
 
-    int array[][10] = {{1, 2, 3, 4},
-                       {5, 6, 7, 8},
-                       {9, 10, 11, 12},
+    int array[][10] = {{1,  2,  3,  4},
+                       {5,  6,  7,  8},
+                       {9,  10, 11, 12},
                        {13, 14, 15, 16}};
 
     int n = 4;
@@ -132,7 +142,7 @@ int main()
     }
     else
     {
-        cout << "The element found at index [" <<stair.first << "," << stair.second << "]" << endl;
+        cout << "The element found at index [" << stair.first << "," << stair.second << "]" << endl;
     }
 
     return 0;
