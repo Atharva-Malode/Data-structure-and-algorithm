@@ -3,10 +3,11 @@
 #include <iostream>
 using namespace std;
 
+template <typename T>
 class vector
 {
     // we have created a dynmaic array
-    int *arr;
+    T *arr;
     int cs;
     int ms;
 
@@ -15,9 +16,9 @@ public:
     {
         cs = 0;
         ms = 1;
-        arr = new int[ms];
+        arr = new T[ms];
     }
-    void push_back(int d)
+    void push_back(T d)
     {
         // two cases to hanadle
         if (cs == ms)
@@ -43,23 +44,23 @@ public:
             cs--;
         }
     }
-    int front()
+    T front()
     {
         return arr[0];
     }
-    int back()
+    T back()
     {
         return arr[cs];
     }
-    int at(int d)
+    T at(int d)
     {
         return arr[d];
     }
-    int size()
+    T size()
     {
         return cs;
     }
-    int capacity()
+    T capacity()
     {
         return ms;
     }
@@ -67,7 +68,7 @@ public:
 
 int main()
 {
-    vector v;
+    vector <int> v;
     v.push_back(1);
     v.push_back(2);
     v.push_back(3);
