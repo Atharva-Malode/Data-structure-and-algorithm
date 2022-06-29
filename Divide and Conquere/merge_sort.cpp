@@ -2,73 +2,83 @@
 #include <vector>
 using namespace std;
 
-void merge_sort(vector<int> &arr, int s, int e)
+void conquere(vector<int> &array, int s, int e)
 {
-
     int mid = (s + e) / 2;
-    int j = mid + 1;
+    int indx1 = s;
+    int indx2 = mid + 1;
 
-    vector<int> temp;
-
-    while (s <= mid & j <= e)
+    vector<int> merged;
+    // first operation  is to push the element which  si smaller from 1 and 2nd array
+    while (indx1 <= mid && indx2 <= e)
     {
-        if (arr[s] < arr[j])
+        if (array[indx1] < array[indx2])
         {
-            temp.push_back(arr[s]);
-            s++;
+            merged.push_back(array[indx1]);
+            indx1++;
         }
         else
         {
-            temp.push_back(arr[j]);
-            j++;
+            merged.push_back(array[indx2]);
+            indx2++;
         }
     }
-    while (s <= mid)
+
+    // waht if our one of the array is bigger than the other one
+    while (indx1 <= mid)
     {
-        temp.push_back(arr[s++]);
+        merged.push_back(array[indx1]);
+        indx1++;
     }
-    while (j <= e)
+
+    while (indx2 <= e)
     {
-        temp.push_back(arr[j++]);
+        merged.push_back(array[indx2]);
+        indx2++;
     }
-    
+
+    // now we have to copy this array merged to our orignal array
+    int k = 0;
+    for (int run = s; run <= e; run++)
+    {
+        array[run] = merged[k];
+        k++;
+    }
+    return;
 }
-void Merge_recursion(vector<int> &arr, int s, int e)
+void divide(vector<int> &array, int s, int e)
 {
-    int mid = (s + e) / 2;
+    
+
     // base case
-    if (s <= e)
+    if (s >= e)
     {
         return;
     }
-
-    // recursive case
-    Merge_recursion(arr, s, mid - 1);
-    Merge_recursion(arr, mid + 1, e);
-
-    merge_sort(arr, s, e);
+    int mid = (s + e) / 2;
+    divide(array, s, mid);
+    divide(array, mid + 1, e);
+    return conquere(array, s, e);
 }
 
 int main()
 {
+    vector<int> array ;//= {4, 3, 1, 5, 6};
+    //int n = sizeof(array) / sizeof(int);
     int no;
-    cout << "Enter the size of array : ";
+    int k ;
+    cout <<"Enter the size of array : ";
     cin >> no;
-    cout << endl;
-
-    vector<int> arr;
-    cout << "Enter the values of the array : ";
-    int a;
-    for (int i = 0; i < no; i++)
-    {
-        cin >> a;
-        arr.push_back(a);
+    cout << "Enter the values of array : ";
+    for (int i = 0 ; i < no ; i++){
+        cin >>k;
+        array.push_back(k);
     }
-    cout << "The unsorted array is : ";
-    for (int x : arr)
+    cout << "The sorted array is : ";
+    divide(array, 0, no - 1);
+    for (auto x : array)
     {
         cout << x << " ";
     }
-    cout << "The sorted array is : ";
     return 0;
 }
