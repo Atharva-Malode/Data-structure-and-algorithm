@@ -48,7 +48,6 @@ void conquere(vector<int> &array, int s, int e)
 }
 void divide(vector<int> &array, int s, int e)
 {
-    
 
     // base case
     if (s >= e)
@@ -63,15 +62,16 @@ void divide(vector<int> &array, int s, int e)
 
 int main()
 {
-    vector<int> array ;//= {4, 3, 1, 5, 6};
-    //int n = sizeof(array) / sizeof(int);
+    vector<int> array;
+    // int n = sizeof(array) / sizeof(int);              note = in case of a array is passed
     int no;
-    int k ;
-    cout <<"Enter the size of array : ";
+    int k;
+    cout << "Enter the size of array : ";
     cin >> no;
     cout << "Enter the values of array : ";
-    for (int i = 0 ; i < no ; i++){
-        cin >>k;
+    for (int i = 0; i < no; i++)
+    {
+        cin >> k;
         array.push_back(k);
     }
     cout << "The sorted array is : ";
