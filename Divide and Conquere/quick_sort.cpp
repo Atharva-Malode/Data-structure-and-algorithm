@@ -2,6 +2,8 @@
 #include <vector>
 using namespace std;
 
+
+// you may also call this as partition block of code which make the partition and return the pivote index 
 int divide(vector<int> &a, int s, int e)
 {
     // our pivote element
@@ -16,6 +18,7 @@ int divide(vector<int> &a, int s, int e)
         }
     }
     swap(a[i+1],a[e]);
+    // returning pivote element 
     return i + 1;
 }
 void conquere(vector<int> &a, int s, int e)
@@ -25,6 +28,7 @@ void conquere(vector<int> &a, int s, int e)
         return ;
     }
     int p = divide(a, s, e);
+    // recursive case 
     conquere(a, s, p - 1);
     conquere(a, p + 1, e);
 }
