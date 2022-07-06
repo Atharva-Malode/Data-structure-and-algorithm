@@ -1,3 +1,6 @@
+
+// NOTE : the case will be same for a vector but it need to be passed by re frence using & vector <int> &ans;
+
 #include <iostream>
 using namespace std;
 
