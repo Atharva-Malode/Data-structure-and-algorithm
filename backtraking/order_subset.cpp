@@ -10,6 +10,9 @@ till now we have seen how to find subset of a givenn string now we will sort  th
 #include <vector>
 #include <algorithm>
 using namespace std;
+
+// compare function is used to sort the given array on the basis of its length and if length is 
+// is equal then on the basis of Lexicographic order
 bool compare(string a, string b){
      if (a.length() == b.length()){
       return a < b;
