@@ -3,6 +3,7 @@ write a function that takes in n *m 2D array and prints
 all array elements in spiral order start from top left
 corner goes to right, proceedes in a spiral pattern
 until every element is visitd
+Fix
 
 
 Sample input :
