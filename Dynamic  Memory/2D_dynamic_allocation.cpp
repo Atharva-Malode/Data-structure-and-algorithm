@@ -21,7 +21,7 @@ int **create_2d_array(int rows, int cols)
     }
     return arr;
 }
-
+// dynamically allocated 
 int main()
 {
 
