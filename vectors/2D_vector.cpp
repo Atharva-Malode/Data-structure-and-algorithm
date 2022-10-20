@@ -6,6 +6,7 @@ int main()
 {
 
     // how to intialize a 2D vector
+    // its niharika here 
 
     vector<vector<int>> dynamic_vector{{1, 2, 3, 4, 5},
                                        {6, 7, 8, 9, 10},
