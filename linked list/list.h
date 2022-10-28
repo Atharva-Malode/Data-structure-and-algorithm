@@ -79,4 +79,7 @@ public:
             temp->Next = n;
         }
     }
+    void Reverse()
+    {
+    }
 };

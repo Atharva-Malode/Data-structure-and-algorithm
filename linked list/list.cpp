@@ -12,7 +12,14 @@ int main()
     l.Push_back(20);
     l.Push_front(30);
 
+    /* while (head != NULL)
+     {
+         cout << head->getdata() << "->";
+         head = head->Next;
+     }
+     */
     Node *head = l.begin();
+    l.Insert(4, 2);
     while (head != NULL)
     {
         cout << head->getdata() << "->";
