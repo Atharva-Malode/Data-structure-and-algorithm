@@ -63,9 +63,9 @@ public:
     void Insert(int data, int pos)
     {
         Node *n = new Node(data);
-        if (Head == NULL)
+        if (pos == 0)
         {
-            Head = Tail = n;
+            Push_front(data);
             return;
         }
         else
