@@ -17,6 +17,22 @@ public:
     }
 };
 
+Node *buildtree()
+{
+    int d;
+    cin >> d;
+    if (d == NULL)
+    {
+        return;
+    }
+    Node *n = new Node(d);
+    n->left = buildtree();
+    n->right = buildtree();
+}
+
+void levelOrder(Node *root)
+{
+}
 int main()
 {
 
