@@ -2,7 +2,7 @@
 using namespace std;
 
 // Input : 1 2 4 -1 -1 5 -1 -1 3 -1 6 -1 -1
-// Output for preorder : 1 2 4 5 3 6
+// Output for PostOrder : 4 7 5 2 6 3 1
 class node
 {
 public:
