@@ -1,7 +1,9 @@
 #include <iostream>
+#include <queue>
 
 using namespace std;
 
+// Input: 1 2 4 -1 -1 5 -1 -1 3 -1 6 -1 -1
 class Node
 {
 
@@ -21,9 +23,9 @@ Node *buildtree()
 {
     int d;
     cin >> d;
-    if (d == NULL)
+    if (d == -1)
     {
-        return;
+        return NULL;
     }
     Node *n = new Node(d);
     n->left = buildtree();
@@ -32,9 +34,46 @@ Node *buildtree()
 
 void levelOrder(Node *root)
 {
+
+    if (root == NULL)
+    {
+        return;
+    }
+    queue<Node *> q;
+    q.push(root);
+    q.push(NULL);
+    while (!q.empty())
+    {
+        Node *f = q.front();
+        if (f == NULL)
+        {
+            cout << endl;
+            q.pop();
+            if (!q.empty())
+            {
+                q.push(NULL);
+            }
+        }
+        else
+        {
+            cout << f->data << " ";
+            q.pop();
+            if (f->left)
+            {
+                q.push(f->left);
+            }
+            if (f->right)
+            {
+                q.push(f->right);
+            }
+        }
+    }
+    return;
 }
 int main()
 {
+    Node *root = buildtree();
+    levelOrder(root);
 
     return 0;
 }
