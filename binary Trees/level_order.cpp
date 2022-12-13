@@ -3,7 +3,13 @@
 
 using namespace std;
 
-// Input: 1 2 4 -1 -1 5 -1 -1 3 -1 6 -1 -1
+// Input: 1 2 4 -1 -1 5 7 -1 -1 3 -1 6 -1 -1
+/*
+        Output: 1
+                2 3
+                4 5 6
+                7
+*/
 class Node
 {
 
