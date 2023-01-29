@@ -6,7 +6,7 @@ class Tree
 {
 public:
     T data;
-    vector<tree *> child; // created for storing multiple child values of single no
+    vector<Tree *> child; // created for storing multiple child values of single no
     Tree(T d)             // constructor
     {
         this->data = d;
