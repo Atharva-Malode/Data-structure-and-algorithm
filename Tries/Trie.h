@@ -19,11 +19,11 @@ using namespace std;
 
 class Node
 {
+public:
     char data;
-    unordered_map<char, Node *> m;
     bool isTerminal;
 
-public:
+    unordered_map<char, Node *> m;
     Node(char data)
     {
         this->data = data;
@@ -40,7 +40,6 @@ public:
     {
         root = new Node('\0');
     }
-
     // Insertion
     void insert(string word)
     {
@@ -48,8 +47,22 @@ public:
         for (char ch : word)
         {
             Node *n = new Node(ch);
-            // temp -> m[ch] = n;
+            temp->m[ch] = n;
         }
+        temp->isTerminal = true;
     }
     // Searching
+    bool search(string word)
+    {
+        Node *temp = root;
+        for (char ch : word)
+        {
+            if (temp->m.count(ch) == 0)
+            {
+                return false;
+            }
+            temp = temp->m[ch];
+        }
+        return temp->isTerminal;
+    }
 };
