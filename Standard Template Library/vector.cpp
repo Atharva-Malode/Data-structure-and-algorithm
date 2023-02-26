@@ -10,6 +10,9 @@ void Explain_Vector()
     /*Emplace Back seems to be similar to push_back
     but is different from it and it is also faster */
     a.emplace_back(3);
+    //  gives the size of the vector
+    a.size();
+    cout << a.empty() << endl;
 }
 
 int main()
