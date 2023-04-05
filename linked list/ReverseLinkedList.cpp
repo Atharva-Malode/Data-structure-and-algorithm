@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
-
 using namespace std;
+
 class node
 {
 public:
@@ -9,15 +9,12 @@ public:
 
     node(int d) : data(d), next(NULL) {}
 };
-
 class List
 {
-    // public:
     node *head;
     node *tail;
 
-public:
-    List() : head(NULL), tail(NULL) {}
+    List(int data) : head(NULL), tail(NULL) {}
 
     void push_front(int data)
     {
@@ -33,15 +30,23 @@ public:
             head = n;
         }
     }
-    void push_back(int data)
+    void reverse()
     {
+        node *prev = NULL;
+        node *curr = head;
+        node *nxt = NULL;
+        while (curr != NULL)
+        {
+            nxt = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = nxt;
+        }
+        head = prev;
     }
 };
-
 int main()
 {
 
-    List a;
-    a.push_front(10);
     return 0;
 }
