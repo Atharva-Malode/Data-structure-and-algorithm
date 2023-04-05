@@ -6,6 +6,8 @@ class Node
 
 public:
     Node *Next;
+    // intilization list wich is dne before the constructor is called
+    // we can also do it by assignment wich is inside the parenthesis
     Node(int d) : data(d), Next(NULL) {}
     int getdata() { return data; }
     friend class List;
@@ -35,7 +37,6 @@ public:
         {
             Node *n = new Node(data);
             Head = Tail = n;
-            return;
         }
         else
         {
