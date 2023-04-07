@@ -30,19 +30,24 @@ class List
             head = n;
         }
     }
-    void reverse()
+    void reverse(node *head)
     {
-        node *prev = NULL;
-        node *curr = head;
-        node *nxt = NULL;
-        while (curr != NULL)
+        node *c = head;
+        node *p = NULL;
+        node *n;
+        while (c != NULL)
         {
-            nxt = curr->next;
-            curr->next = prev;
-            prev = curr;
-            curr = nxt;
+            // save the next node
+            n = c->next;
+
+            // make the current node point to previous
+            c->next = p;
+
+            // update P and C take them 1 step formward
+            p = c;
+            c = n;
         }
-        head = prev;
+        head = p;
     }
 };
 int main()
