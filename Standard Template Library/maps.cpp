@@ -30,5 +30,6 @@ int main()
     {
         cout << "Elmeent found " << endl;
     }
+    cout << a.size() << endl;
     return 0;
 }
