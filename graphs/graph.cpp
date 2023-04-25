@@ -30,8 +30,10 @@ int main()
                                    Disadvantage - to much memory is needed.
                                                   need to iterate over a entire row to find a particular node.
 
-           3) Edge List          -
-           4) 2D Matrix (Implicit Graph)
+           3) Edge List          - store data in terms of triplets with <weight , source, destinatiton>
+
+           4) 2D Matrix          -
+              (Implicit Graph)
     */
 
     return 0;
