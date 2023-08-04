@@ -42,7 +42,7 @@ bool CanPlace(int board[][20],int n, int x, int y)
      {
       return false;
      }
-    i--, j--;
+    i--, j++;
    }
 
    return true;

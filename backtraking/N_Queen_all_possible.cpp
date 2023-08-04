@@ -17,7 +17,7 @@ bool CanPlace(int board[][20], int n, int x, int y)
      int i = x;
      int j = y;
 
-     while(i <= 0 and j <=0)
+     while(i >= 0 and j >=0)
      {
           if(board[i][j] == 1)
           {
@@ -31,7 +31,7 @@ bool CanPlace(int board[][20], int n, int x, int y)
      i = x;
      j = y;
 
-     while(i >= 0 and j <= n)
+     while(i >= 0 and j < n)
      {
         if(board [i][j] == 1)
         {
@@ -39,7 +39,7 @@ bool CanPlace(int board[][20], int n, int x, int y)
         }
 
         i--;
-        j--;
+        j++;
      }
 
      return true;
@@ -55,13 +55,14 @@ void PrintBoard(int board[][20], int n)
         cout << endl;
      }
 }
-int SolveNqueen(int board[][20], int n, int i)
+void SolveNqueen(int board[][20], int n, int i)
 {
       // base case
       if(i == n)
       {
-        //PrintBoard(board,n);
-        return 1;
+        PrintBoard(board,n);
+        cout << endl;
+        return ;
       }
 
     int ways = 0;
@@ -70,13 +71,13 @@ int SolveNqueen(int board[][20], int n, int i)
      if(CanPlace(board,n,i,j))
      {
         board[i][j] = 1;
-        ways += SolveNqueen(board, n, i+1);
+        SolveNqueen(board, n, i+1);
        
         //BackTrack
         board[i][j] = 0;
      }  
     }
-   return ways;
+   return ;
 }
 int main ()
 {
@@ -86,8 +87,8 @@ int main ()
     cin >> n;
     
     int a ;
-    a = SolveNqueen(board,n,0);
-    cout<<"no of ways are :"<<a<<" ";
+    SolveNqueen(board,n,0);
+   //  cout<<"no of ways are : "<<a<<" ";
 
     return 0;
 }
